@@ -4,9 +4,9 @@ from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
 
 
-@app.route("/")
-def index():
-    return render_template('home.temp.html')
+# @app.route("/")
+# def index():
+#     return render_template('home.temp.html')
 
 
 
@@ -30,8 +30,6 @@ def about_us():
 @app.route("/about-doctors")
 def about_doctors():
       return render_template('home.temp.html')
-
-
 
 
 
