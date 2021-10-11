@@ -1,24 +1,29 @@
 <!doctype html>
 <html>
-   <body>
-   
-      <h1>Pacient stories</h1>
+
+<body>
+   <h1>Pacient stories</h1>
+   <nav>
       <ul>
+         {% for item in data %}
+         {% for key, value in item.items() %}
+
          <li>
-            <a href="/pacient-story">Pacient story A</a>
+            {% if key == "title" %}
+            <h1>{{value}}</h1>
+            {% endif %}
+            {% if key == "subtitle" %}
+            <h3>{{value}}</h3>
+            {% endif %}
+            {% if key == "image" %}
+            <image class="image list-item" src={{value}} width="100" />
+            {% endif %}
          </li>
-         <li>
-            <a href="/pacient-story">Pacient story B</a>
-         </li>
-         <li>
-            <a href="/pacient-story">Pacient story C</a>
-         </li>
-         <li>
-            <a href="/pacient-story">Pacient story D</a>
-         </li>
-         <li>
-            <a href="/pacient-story">Pacient story E</a>
-         </li>
+
+         {% endfor %}
+         {% endfor %}
       </ul>
-   </body>
+   </nav>
+</body>
+
 </html>
