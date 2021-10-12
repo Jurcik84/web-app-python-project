@@ -1,14 +1,17 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
+   <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+   </head>
 
 <body>
    <h1>Pacient stories</h1>
    <nav>
       <ul>
          {% for item in data %}
-         {% for key, value in item.items() %}
-
          <li>
+            {% for key, value in item.items() %}
+
             {% if key == "title" %}
             <h1>{{value}}</h1>
             {% endif %}
@@ -18,12 +21,20 @@
             {% if key == "image" %}
             <image class="image list-item" src={{value}} width="100" />
             {% endif %}
-         </li>
 
-         {% endfor %}
+            {% endfor %}
+         </li>
          {% endfor %}
       </ul>
    </nav>
 </body>
 
-</html>
+</html> -->
+
+{% extends "navigation.temp.html" %}
+{% block content %}
+  <div class="home">
+    <h1>All pacient stories</h1>
+ 
+  </div>
+{% endblock %}

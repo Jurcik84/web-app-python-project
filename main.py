@@ -1,15 +1,23 @@
 from flask import Flask, redirect, url_for, request, render_template
-
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
 
-@app.route("/")
+###############################################
+#          Render HOME PAGE                   #
+###############################################
+@app.route("/", methods=["GET"])
 def index():
     return render_template('home.temp.html')
 
 
-@app.route("/pacient-stories")
+
+###############################################
+#          Render PACIENT STORIES             #
+###############################################
+
+@app.route("/pacient-stories", methods=["GET"])
 def pacient_stories():
     pacient_stories = [{
         "title": "Juraj story",
@@ -40,20 +48,30 @@ def pacient_stories():
 
     return render_template('pacient-stories.temp.html', data=pacient_stories)
 
+###############################################
+#          Render HOME PAGE                   #
+###############################################
 
-@app.route("/pacient-story")
+@app.route("/pacient-story", methods=["GET"])
 def pacient_story():
     return render_template('pacient-story.temp.html')
 
 
+###############################################
+#          Render ABOUT US                    #
+###############################################
+
 @app.route("/about-us")
 def about_us():
-    return render_template('about-us.temp.html')
+    return render_template('about-us.temp.html', methods=["GET"])
 
+###############################################
+#          Render About Doctores                 #
+###############################################
 
 @app.route("/about-doctors")
 def about_doctors():
-    return render_template('home.temp.html')
+    return render_template('home.temp.html', methods=["GET"])
 
 
 if __name__ == "__main__":
