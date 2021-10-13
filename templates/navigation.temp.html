@@ -1,35 +1,3 @@
-<!-- <!doctype html>
-<html>
-   <head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
-   </head>
-
-<body>
-   <h1>Pacient stories</h1>
-   <nav>
-      <ul>
-         {% for item in data %}
-         <li>
-            {% for key, value in item.items() %}
-
-            {% if key == "title" %}
-            <h1>{{value}}</h1>
-            {% endif %}
-            {% if key == "subtitle" %}
-            <h3>{{value}}</h3>
-            {% endif %}
-            {% if key == "image" %}
-            <image class="image list-item" src={{value}} width="100" />
-            {% endif %}
-
-            {% endfor %}
-         </li>
-         {% endfor %}
-      </ul>
-   </nav>
-</body>
-
-</html> -->
 
 <html lang="en">
 	<head>
@@ -48,7 +16,7 @@
 						<div>
 							<!-- Website Logo -->
 							<a href="#" class="flex items-center py-4 px-2">
-								<!-- <img src="" alt="Logo" class="h-8 w-8 mr-2"> -->
+								<img src="{{url_for('static', filename='/images/img.jpg')}}" alt="Logo" class="h-8 w-8 mr-2">
 								<span class="font-semibold text-gray-500 text-lg">
                                    FUCKMETACRILL
                                 </span>
@@ -56,11 +24,11 @@
 						</div>
 						<!-- Primary Navbar items -->
 						<div class="hidden md:flex items-center space-x-1">
-							<a href="" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Home</a>
-							<a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">poskodeny metacrillom</a>
-							<a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ivana Nemeckova</a>
-                            <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Zavadilova Vybulkova</a>
-							<a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</a>
+							<a href="/" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold ">Metacrill</a>
+							<a href="/poskodeny-metacrillom" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Poskodeny metacrillom</a>
+							<a href="/mudr-ivana-nemeckova-metacrill-praha" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Ivana Nemeckova</a>
+                            <a href="/mudr-zavadilova-vybulkova-metacrill-praha" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Zavadilova Vybulkova</a>
+							<a href="/" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</a>
 						</div>
 					</div>
 					<!-- Secondary Navbar items -->

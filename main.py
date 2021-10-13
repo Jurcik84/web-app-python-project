@@ -3,13 +3,45 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+url_list = ["/poskodeny-metacrillom", "/mudr-ivana-nemeckova-metacrill-praha", "/mudr-zavadilova-vybulkova-metacrill-praha"]
+
 
 ###############################################
 #          Render HOME PAGE                   #
 ###############################################
+
 @app.route("/", methods=["GET"])
 def index():
     return render_template('home.temp.html')
+
+###############################################
+#          Render NEMECKOVA                   #
+###############################################
+
+@app.route(url_list[1], methods=["GET"])
+def mudr_ivana_nemackova():
+    return render_template('nemeckova.temp.html')
+
+
+###############################################
+#          Render Zavadilova                  #
+###############################################
+
+@app.route(url_list[2], methods=["GET"])
+def mudr_vybulkova_zavadilova():
+    return render_template('zavadilova.temp.html')
+
+
+###############################################
+#          Render Poskodeny metacrillom       #
+###############################################
+
+@app.route("/poskodeny-metacrillom", methods=["GET"])
+def poskodeny_metacrillom():
+    return render_template('poskodeny-metacrillom.temp.html')
+
+
+
 
 
 
